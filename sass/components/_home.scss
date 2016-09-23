@@ -1,0 +1,12 @@
+.content {
+  width: $body-width;
+  max-width: $body-width;
+  margin: 60px auto;
+  display: block;
+  // padding: 20px;
+  background: transparent;
+
+  h2 {
+    color: $camouflage-green;
+  }
+}

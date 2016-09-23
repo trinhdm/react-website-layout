@@ -1,0 +1,58 @@
+nav#portfolio-navbar {
+  font: 600 .8em $body-font;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  background: $white;
+  border-bottom: 1px solid $alto;
+  margin: 0;
+
+  li {
+    display: inline-block;
+    // margin-right: 5px;
+
+    a {
+      display: inline-block;
+      padding: 14px 15px;
+      color: $conifer;
+      text-decoration: none;
+
+      &:hover, &:focus {
+        color: darken($conifer, 20%);
+        background: lighten($conifer, 40%);
+      }
+    }
+
+    &.current {
+      a {
+        color: $camouflage-green;
+        // background: lighten($conifer, 30%);
+      }
+    }
+  }
+
+  #navbar-interior {
+    width: $body-width;
+    max-width: $body-width;
+    margin: 0 auto;
+  }
+
+  .navbar-header {
+    height: $navbar-height;
+    line-height: $navbar-height;
+  }
+
+  .navbar-name {
+    color: $camouflage-green;
+
+    &:hover, &:focus {
+      color: $envy;
+      text-decoration: none;
+    }
+  }
+
+  div#navbar-interior {
+    width: $body-width;
+    max-width: $body-width;
+    height: $navbar-height;
+  }
+}

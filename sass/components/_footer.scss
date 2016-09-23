@@ -1,0 +1,29 @@
+#portfolio-footer {
+  font: 600 .8em $body-font;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+
+  background: $white;
+  border-top: 1px solid $alto;
+
+  .portfolio-footer-interior {
+    width: $body-width;
+    max-width: $body-width;
+    height: $navbar-height;
+    line-height: $navbar-height;
+    margin: 0 auto;
+  }
+
+  .footer-links {
+    text-align: right;
+  }
+
+  .footer-link {
+    display: inline-block;
+    margin-left: 10px;
+  }
+
+  .footer-copyright {
+    padding-left: 0;
+  }
+}
