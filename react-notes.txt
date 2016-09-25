@@ -1,0 +1,32 @@
+Intro to JSX
+- a JSX element must have one outermost element, such as <div></div>
+  - the first opening tag and the final closing tag of a JSX expression must belong to the same JSX element
+- ReactDOM.render takes a JSX expression, creates a corresponding tree of DOM nodes, and adds that tree to the DOM. That is the way to make a JSX expression appear onscreen.
+  - EX:
+    on app.js:
+    ReactDOM.render(<h1>Render me!</h1>, document.getElementById('app'));
+    on index.html:
+    <div id="app"></div>
+
+Advanced JSX
+- In JSX, you have to use className and not class as an attribute
+  - EX:
+    Wrong: <h1 class="lol"></h1>
+    Right: <h1 className="lol"></h1>
+- JSX must have self-closing tags
+  - EX:
+    Wrong: <br>
+    Right: <br />
+- Any code within { } in JSX reads as JavaScript
+- you can't use if/else statements within JSX
+  - you can write if/else statements if you write the JSX within the if/else statement
+- x ? y : z is a ternary operator, where if x = true, then do y, else if x = false, do z
+  - another way to write if/else
+- use .map if you want to create a list of JSX elements
+
+Components
+- react applications are made of components (small, reusable chunk of code whose purpose is to render some HTML)
+- React =/= ReactDOM
+  - ReactDOM is for interacting with the DOM
+  - React is for pure React purposes, such as creating components or for writing JSX elements
+- to create a component, you need to call on React.createClass (to create a component class)

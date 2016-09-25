@@ -53,7 +53,11 @@ nav#portfolio-navbar {
   letter-spacing: .5px;
   text-transform: uppercase;
   background: #fff;
-  border-top: 1px solid #ddd; }
+  border-top: 1px solid #ddd;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0; }
   #portfolio-footer .portfolio-footer-interior {
     width: 880px;
     max-width: 880px;

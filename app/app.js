@@ -1,11 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+// either or would work
+var React = require('react');
+var ReactDOM = require('react-dom');  
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+
 // import SearchableTable from './SearchableTable';
 // import {data} from './data';
 // import slider from './slider';
 
 // Filterable CheatSheet Component
 // ReactDOM.render( <SearchableTable data={data}/>, document.getElementById('searchableTable') );
+
+
+// when you click on a tab, call onClick in the tab's html to fade or slide the body using a function
+//    lesson #8 in advanced JSX in codeacademy
 
 var heading = 'Hi, my name is Doreen Trinh';
 
@@ -20,6 +28,16 @@ var tabList = [
 var footerList = [
     'Github', 'E-Mail'
 ];
+
+// var footerList = {
+//   github: 'trinhdm.github.io',
+//   email: 'doreenmtrinh@gmail.com'
+// };
+
+// without JSX
+// var emailMe = React.createElement('a', {href: 'mailto:doreenmtrinh@gmail.com'}, 'doreenmtrinh@gmail.com');
+// with JSX
+var emailMe = <a href="mailto:doreenmtrinh@gmail.com">doreenmtrinh@gmail.com</a>;
 
 var Tab = React.createClass({
     handleClick: function(e){
@@ -100,18 +118,31 @@ var HomeSlider = React.createClass({
   }
 });
 
-var aboutDoreen1 = 'My name is Doreen Trinh and my background lies in International Studies with a specialization in economics from University of California, Irvine. Outside of my education at UCI, I have also studied at East China Normal University (华师大) in Shanghai.';
-var aboutDoreen2 = 'As the global economy continues to expand, the need to connect businesses to clients rises on a multinational scale. As a front-end developer and a specialist who understands the diversity of the worldwide economy, I bridge the gap between businesses and clients on an international scale by helping them communicate digitally through code.';
-var aboutDoreen3 = ' When I\'m not coding the day away, you could normally find me hiking in the woods, discovering new eateries in the city or trying out 3 coffee shops a day.';
+var aboutDoreen1 = <p>My name is Doreen Trinh and my background lies in International Studies with a specialization in economics from University of California, Irvine. Outside of my education at UCI, I have also studied at East China Normal University (华师大) in Shanghai.</p>;
+var aboutDoreen2 = <p>As the global economy continues to expand, the need to connect businesses to clients rises on a multinational scale. As a front-end developer and a specialist who understands the diversity of the worldwide economy, I bridge the gap between businesses and clients on an international scale by helping them communicate digitally through code.</p>;
+var aboutDoreen3 = <p>When I am not coding the day away, you could normally find me hiking in the woods, discovering new eateries in the city or trying out 3 coffee shops a day.</p>;
 
 var AboutSlider = React.createClass({
   render: function(){
     return(
       <div>
         <h2>About</h2>
-        <p>{aboutDoreen1}</p>
-        <p>{aboutDoreen2}</p>
-        <p>{aboutDoreen3}</p>
+        {aboutDoreen1}
+        {aboutDoreen2}
+        {aboutDoreen3}
+      </div>
+    );
+  }
+});
+
+var contactMe = <p>Have a cool project in mind and think I could help you with it? Feel free to email me at {emailMe}. Or view my resume here.</p>;
+
+var ContactSlider = React.createClass({
+  render: function(){
+    return(
+      <div>
+        <h2>Contact</h2>
+        <p>{contactMe}</p>
       </div>
     );
   }
@@ -141,7 +172,7 @@ var Content = React.createClass({
 
             	{this.props.currentTab === 3 ?
 	            <div className="contact">
-            		<img src="http://s.mlkshk.com/r/JAUD" />
+            		<ContactSlider />
             	</div>
             	:null}
 
