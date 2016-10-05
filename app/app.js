@@ -18,7 +18,7 @@ var Footer = require('./components/footer.js');
 // when you click on a tab, call onClick in the tab's html to fade or slide the body using a function
 //    lesson #8 in advanced JSX in codeacademy
 
-var heading = 'Hi, my name is Doreen Trinh';
+var heading = 'Hi, my name is Doreen Trinh'; 
 
 var tabList = [
     { 'id': 0, 'name': '', 'url': '/home' },
@@ -96,7 +96,7 @@ var Tabs = React.createClass({
                              />
                         );
                     }.bind(this))}
-                </ul> 
+                </ul>
               </div>
             </div>
           </nav>

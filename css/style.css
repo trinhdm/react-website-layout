@@ -12,6 +12,9 @@ body {
   font-family: "Open Sans", sans-serif;
   background: #f7f7f7; }
 
+h2 {
+  margin: 20px 0 30px; }
+
 nav#portfolio-navbar {
   font: 600 0.8em "Open Sans", sans-serif;
   letter-spacing: .5px;
@@ -51,11 +54,18 @@ nav#portfolio-navbar {
 .content {
   width: 980px;
   max-width: 980px;
-  margin: 60px auto;
+  margin: 0 auto 60px;
   display: block;
   background: transparent; }
   .content h2 {
     color: #778B71; }
+
+.row-no-margin {
+  margin: 0; }
+
+.home-intro {
+  padding: 70px 0;
+  line-height: 1.8; }
 
 .project-thumbnail {
   overflow: hidden;
