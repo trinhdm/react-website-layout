@@ -30,3 +30,38 @@ Components
   - ReactDOM is for interacting with the DOM
   - React is for pure React purposes, such as creating components or for writing JSX elements
 - to create a component, you need to call on React.createClass (to create a component class)
+- component class names must be written in UpperCamelCase
+- a render function must have a return statement
+
+
+Props
+- Information that gets passed from one component to another is known as "props."
+- every component has a props
+- a props is an object that holds information about an object
+- To see a component's props object, you use the expression this.props
+
+
+
+
+
+var target = $('div.slider-item');
+var targetHeight = target.height();
+var containerHeight = $('#intro-slider').outerHeight();
+
+var maxScroll = containerHeight - targetHeight;
+var scrollRange = (maxScroll / (target.length - 1)) + 250; // originally 450
+
+$(document).scroll(function(e) {
+var scrollY = $(window).scrollTop();
+var scrollPercent =(scrollRange - scrollY % scrollRange) / scrollRange;
+var divIndex = Math.floor(scrollY / scrollRange);
+target.slice(0,divIndex).css('opacity', 0); // set-through
+// slice returns a piece of the collection of things
+
+target.eq(divIndex).css('opacity', scrollPercent);
+// opacity based on scroll percent (where you're at in the current bg)
+// eq(divIndex) is the the current one
+
+// scrollpercent = where you'ree at on the current div based on the height of the slide
+target.slice(divIndex+1).css('opacity', 1);
+});

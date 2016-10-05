@@ -1,6 +1,9 @@
 // either or would work
 var React = require('react');
-var ReactDOM = require('react-dom');  
+var ReactDOM = require('react-dom');
+var HomeSlider = require('./components/home.js');
+var Footer = require('./components/footer.js');
+
 // import React from 'react';
 // import ReactDOM from 'react-dom';
 
@@ -25,14 +28,7 @@ var tabList = [
     { 'id': 4, 'name': 'Writings', 'url': '/writings' }
 ];
 
-var footerList = [
-    'Github', 'E-Mail'
-];
 
-// var footerList = {
-//   github: 'trinhdm.github.io',
-//   email: 'doreenmtrinh@gmail.com'
-// };
 
 // without JSX
 // var emailMe = React.createElement('a', {href: 'mailto:doreenmtrinh@gmail.com'}, 'doreenmtrinh@gmail.com');
@@ -40,6 +36,7 @@ var footerList = [
 var emailMe = <a href="mailto:doreenmtrinh@gmail.com">doreenmtrinh@gmail.com</a>;
 
 var Tab = React.createClass({
+  // handleClick is an event listener in a render function
     handleClick: function(e){
         e.preventDefault();
     	this.props.handleClick();
@@ -99,7 +96,7 @@ var Tabs = React.createClass({
                              />
                         );
                     }.bind(this))}
-                </ul>
+                </ul> 
               </div>
             </div>
           </nav>
@@ -107,29 +104,22 @@ var Tabs = React.createClass({
     }
 });
 
-var HomeSlider = React.createClass({
-  render: function() {
-    return (
-      <div>
-        <h2>Selected Projects</h2>
-        asfhkasl
-      </div>
-    );
-  }
-});
 
-var aboutDoreen1 = <p>My name is Doreen Trinh and my background lies in International Studies with a specialization in economics from University of California, Irvine. Outside of my education at UCI, I have also studied at East China Normal University (华师大) in Shanghai.</p>;
-var aboutDoreen2 = <p>As the global economy continues to expand, the need to connect businesses to clients rises on a multinational scale. As a front-end developer and a specialist who understands the diversity of the worldwide economy, I bridge the gap between businesses and clients on an international scale by helping them communicate digitally through code.</p>;
-var aboutDoreen3 = <p>When I am not coding the day away, you could normally find me hiking in the woods, discovering new eateries in the city or trying out 3 coffee shops a day.</p>;
 
 var AboutSlider = React.createClass({
   render: function(){
     return(
       <div>
         <h2>About</h2>
-        {aboutDoreen1}
-        {aboutDoreen2}
-        {aboutDoreen3}
+          <p>
+            My name is Doreen Trinh and my background lies in International Studies with a specialization in economics from University of California, Irvine. Outside of my education at UCI, I have also studied at East China Normal University (华师大) in Shanghai.
+          </p>
+          <p>
+            As the global economy continues to expand, the need to connect businesses to clients rises on a multinational scale. As a front-end developer and a specialist who understands the diversity of the worldwide economy, I bridge the gap between businesses and clients on an international scale by helping them communicate digitally through code.
+          </p>
+          <p>
+            When I am not coding the day away, you could normally find me hiking in the woods, discovering new eateries in the city or trying out 3 coffee shops a day.
+          </p>
       </div>
     );
   }
@@ -184,30 +174,6 @@ var Content = React.createClass({
             </div>
         );
     }
-});
-
-var Footer = React.createClass({
-  render: function() {
-    return (
-      <div id="portfolio-footer">
-        <div className="portfolio-footer-interior">
-          <div className="col-md-6 footer-copyright">
-            Doreen Trinh
-          </div>
-
-          <div className="col-md-6 footer-links">
-            {
-              footerList.map(function (footname) {
-                  return <div className="footer-link">{footname}</div>
-              })
-            }
-          </div>
-
-          <div className="clear"></div>
-        </div>
-      </div>
-    );
-  }
 });
 
 
