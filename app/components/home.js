@@ -18,6 +18,10 @@ var SelectedProjects = React.createClass({
 });
 
 var RecentWritings = React.createClass({
+  scream: function () {
+    alert('AAAAAAAAHHH!!!!!');
+  },
+  
   render: function() {
     return (
       <div className="row writings-row">
@@ -37,10 +41,6 @@ var RecentWritings = React.createClass({
 });
 
 var HomeSlider = React.createClass({
-  scream: function () {
-    alert('AAAAAAAAHHH!!!!!');
-  },
-
   render: function() {
     return (
       <div>

@@ -2,6 +2,8 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var HomeSlider = require('./components/home.js');
+var AboutSlider = require('./components/about.js');
+var WritingsSlider = require('./components/writings.js');
 var Footer = require('./components/footer.js');
 
 // import React from 'react';
@@ -18,7 +20,7 @@ var Footer = require('./components/footer.js');
 // when you click on a tab, call onClick in the tab's html to fade or slide the body using a function
 //    lesson #8 in advanced JSX in codeacademy
 
-var heading = 'Hi, my name is Doreen Trinh'; 
+var heading = 'Hi, my name is Doreen Trinh';
 
 var tabList = [
     { 'id': 0, 'name': '', 'url': '/home' },
@@ -106,25 +108,6 @@ var Tabs = React.createClass({
 
 
 
-var AboutSlider = React.createClass({
-  render: function(){
-    return(
-      <div>
-        <h2>About</h2>
-          <p>
-            My name is Doreen Trinh and my background lies in International Studies with a specialization in economics from University of California, Irvine. Outside of my education at UCI, I have also studied at East China Normal University (华师大) in Shanghai.
-          </p>
-          <p>
-            As the global economy continues to expand, the need to connect businesses to clients rises on a multinational scale. As a front-end developer and a specialist who understands the diversity of the worldwide economy, I bridge the gap between businesses and clients on an international scale by helping them communicate digitally through code.
-          </p>
-          <p>
-            When I am not coding the day away, you could normally find me hiking in the woods, discovering new eateries in the city or trying out 3 coffee shops a day.
-          </p>
-      </div>
-    );
-  }
-});
-
 var contactMe = <p>Have a cool project in mind and think I could help you with it? Feel free to email me at {emailMe}. Or view my resume here.</p>;
 
 var ContactSlider = React.createClass({
@@ -168,7 +151,7 @@ var Content = React.createClass({
 
             	{this.props.currentTab === 4 ?
             	<div className="writings">
-            		<img src="http://s.mlkshk.com/r/ZJPL" />
+            		<WritingsSlider />
             	</div>
             	:null}
             </div>
