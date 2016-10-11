@@ -1,6 +1,8 @@
 // either or would work
 var React = require('react');
 var ReactDOM = require('react-dom');
+// var ScrollEffect = require('./components/scroll-effects.js');
+  
 var HomeSlider = require('./components/home.js');
 var AboutSlider = require('./components/about.js');
 var WritingsSlider = require('./components/writings.js');
@@ -20,7 +22,7 @@ var Footer = require('./components/footer.js');
 // when you click on a tab, call onClick in the tab's html to fade or slide the body using a function
 //    lesson #8 in advanced JSX in codeacademy
 
-var heading = 'Hi, my name is Doreen Trinh';
+var heading = 'Doreen Trinh | Front-end Dev & Designer';
 
 var tabList = [
     { 'id': 0, 'name': '', 'url': '/home' },
@@ -66,7 +68,7 @@ var NavbarBrand = React.createClass({
           <span className="icon-bar"></span>
           <span className="icon-bar"></span>
           </button>
-          <a className="navbar-name" href="/home">
+          <a className="navbar-name" href="./index.html">
             {heading}
           </a>
       </div>
@@ -172,6 +174,12 @@ var PortfolioNav = React.createClass({
         this.setState({ currentTab: tab.id });
     },
 
+    fadeOut: function () {
+      return {
+
+      };
+    },
+
     render: function(){
         return(
             <div>
@@ -187,7 +195,7 @@ var PortfolioNav = React.createClass({
     }
 });
 
-React.render(
+ReactDOM.render(
     <PortfolioNav />,
-    document.body
+    document.getElementById('container')
 );

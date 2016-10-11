@@ -19,6 +19,8 @@
   },
   "dependencies": {
     "react": "0.14.5",
-    "react-dom": "0.14.5"
+    "react-css-transition-replace": "^2.0.1",
+    "react-dom": "0.14.5",
+    "react-router": "^2.8.1"
   }
 }

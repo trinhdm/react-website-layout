@@ -3,7 +3,7 @@ nav#portfolio-navbar {
   letter-spacing: .5px;
   text-transform: uppercase;
   background: $white;
-  border-bottom: 1px solid $alto;
+  // border-bottom: 1px solid $alto;
   margin: 0;
 
   li {
@@ -12,19 +12,34 @@ nav#portfolio-navbar {
 
     a {
       display: inline-block;
-      padding: 14px 15px;
-      color: $conifer;
+      padding: 19.5px 15px;
+      color: $silver;
       text-decoration: none;
 
       &:hover, &:focus {
-        color: darken($conifer, 20%);
-        background: lighten($conifer, 40%);
+        color: darken($silver, 20%);
+        background: lighten($silver, 40%);
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        height: 2px;
+        width: 0;
+        margin-top: -11px;
+        background: transparent;
+        transition: width .5s ease, background-color .5s ease;
+      }
+
+      &:hover:after {
+        width: 100%;
+        background: $mine-shaft;
       }
     }
 
     &.current {
       a {
-        color: $camouflage-green;
+        color: $mine-shaft;
         // background: lighten($conifer, 30%);
       }
     }

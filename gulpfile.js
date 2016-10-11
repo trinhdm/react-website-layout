@@ -1,6 +1,4 @@
 /*
-*	Task Automation to make my life easier.
-*	Author: Jean-Pierre Sierens
 *	===========================================================================
 */
 

@@ -1,5 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+// var ScrollEffect = require('./scroll-effects.js').default;
 
 var SelectedProjects = React.createClass({
   render: function() {
@@ -21,7 +22,7 @@ var RecentWritings = React.createClass({
   scream: function () {
     alert('AAAAAAAAHHH!!!!!');
   },
-  
+
   render: function() {
     return (
       <div className="row writings-row">
@@ -40,19 +41,36 @@ var RecentWritings = React.createClass({
   }
 });
 
+
 var HomeSlider = React.createClass({
+  fadeOnScroll: function() {
+    // hide our element on page load
+    $('#selected-projects').css('opacity', 0);
+
+    $('#selected-projects').waypoint(function() {
+      $('#selected-projects').addClass('fadeInLeft');
+    }, { offset: '50%' });
+  },
+
   render: function() {
     return (
       <div>
         <div className="row-no-margin row">
-          <div className="home-intro col-md-6">
-            <h1>Hi, my name is Doreen Trinh.</h1>
-            Junior Front-End Developer and Designer from Southern California, currently working as an independent contractor. I stand on a sweet spot where design & code intersects.
+          <div className="home-intro col-md-10">
+            <p className="small with-margin">– Hi!</p>
+            <p className="intro-text">My name is <b>Doreen Trinh</b>,
+            and I am a junior <b>Front-End Developer</b> and <b>Designer</b> from Southern California, currently working as a freelancer.<br /> I stand on a sweet spot where design & code intersects.
+            </p>
+
+            <p className="small with-margin"><a href="./about">– Read more about me →</a></p>
+            <p className="small with-margin"><a href="mailto:doreenmtrinh@gmail.com">– Send me an email (doreenmtrinh@gmail.com) →</a></p>
+            <p className="small">– Find me on</p>
+            <span className="links-wrap"><a href="https://github.com/trinhdm/" className="links">GitHub</a></span> – <a className="links">Behance</a> – <a href="https://www.linkedin.com/in/doreen-trinh-378a99100" className="links">LinkedIn</a>
           </div>
         </div>
 
         <h2>Selected Projects</h2>
-        <div className="row">
+        <div className="row" id="selected-projects" onScroll={this.fadeOnScroll}>
           <SelectedProjects projectTitle="Foreground Studios" projectType="WordPress, Web Development" projectImage="./assets/img/foreground.jpg" />
 
           <SelectedProjects projectTitle="Anderson Dentistry" projectType="WordPress, Web Design, Web Development" projectImage="./assets/img/anderson.jpg" />
@@ -62,7 +80,7 @@ var HomeSlider = React.createClass({
 
         <h2>Writings</h2>
         <div>
-          <RecentWritings blogTitle="Life" blogDate="09.12.16" blogDescription="A brain-dump of my recent experiences - moving from university syllabi to an ever-changing industry." />
+          <RecentWritings blogTitle="Life" blogDate="09.12.16" blogLink="./writings/2016-09-12-progress.html" blogDescription="A brain-dump of my recent experiences - moving from university syllabi to an ever-changing industry." />
 
           <RecentWritings blogTitle="Favorite Resources" blogDate="09.05.16" blogDescription="A comprehensive list of my personal favorite resources and tools for web design and development." />
 
