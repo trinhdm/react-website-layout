@@ -1,6 +1,5 @@
 ## es6-react-boilerplate
-
-To use, first download the repository,then do 
+To use, first download the repository,then do
 
 ```
 $ npm install
@@ -20,3 +19,5 @@ $ gulp
 ```
 
 and go to localhost:3000 to see the project.
+=======
+# react-website-layout
